@@ -8,9 +8,8 @@
 
 #import "ViewController.h"
 #import "UIButton+SSCountDown.h"
-@interface ViewController (){
-    UIButton * btn;
-}
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 
 @end
 
@@ -18,16 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.bounds = CGRectMake(0, 0, 100, 50);
-    btn.center = self.view.center;
-    [btn setTitle:@"发送验证码" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn ss_countDown:3 title:@"s再发送"];
-    [btn ss_addCondition:^BOOL{
-        return 1 > 0;
-    }];
-    [self.view addSubview:btn];
+    [_btn ss_countDown:3 title:@"s再发送"];
 }
 
 @end

@@ -22,7 +22,5 @@
 
 
 
-- (void)ss_addCondition:(BOOL(^)())condition;
-
 
 @end
